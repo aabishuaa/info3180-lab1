@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me - Abishua Johnson</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+    <script src="{{url_for('static', filename='js/app.js')}}"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   </head>
   <body>
@@ -20,11 +21,18 @@
     </p>
 
     <div class="image-gallery">
-      <img src="{{ url_for('static', filename='images/carlos_alcaraz.png') }}" alt="Carlos Alcaraz at Australian Open hitting a forehand" />
-      <img src="{{ url_for('static', filename='images/france.png') }}" alt="Eiffel Tower with Cherry Blossom tree in front" />
-      <img src="{{ url_for('static', filename='images/ai.png') }}" alt="Artificial Intelligence" />
-      <img src="{{ url_for('static', filename='images/jamaica.png') }}" alt="Map of Jamaica" />
-      <img src="{{ url_for('static', filename='images/netflix.png') }}" alt="Netflix Logo on a phone screen" />
-    </div>
+        <img src="{{ url_for('static', filename='images/carlos_alcaraz.png') }}" alt="Carlos Alcaraz at Australian Open hitting a forehand" data-message="This is Carlos Alcaraz, my favourite active tennis player!" />
+        <img src="{{ url_for('static', filename='images/france.png') }}" alt="Eiffel Tower with Cherry Blossom tree in front" data-message="This is the La Tour Eiffel. I hope to see it one day!" />
+        <img src="{{ url_for('static', filename='images/ai.png') }}" alt="Artificial Intelligence" data-message="To what extent can computers replicate the human brain?" />
+        <img src="{{ url_for('static', filename='images/jamaica.png') }}" alt="Map of Jamaica" data-message="Mi likkle but mi tallawah!" />
+        <img src="{{ url_for('static', filename='images/netflix.png') }}" alt="Netflix Logo on a phone screen" data-message="Favourite Netflix series? Definitely Stranger Things!" />
+      </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="modal-message"></p>
+        </div>
+      </div>
   </body>
 </html>
